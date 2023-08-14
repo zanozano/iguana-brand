@@ -1,0 +1,24 @@
+{
+  "name": "iguana-landing-page",
+  "version": "2.0.0",
+  "description": "This project is using pure HTML and CSS as a base to show as a landing page the Iguana Animal ",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/zanozano/iguana-brand"
+  },
+  "keywords": [
+    "landing-page",
+    "css",
+    "html"
+  ],
+  "author": "Cristobal Manzano",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

@@ -1,0 +1,378 @@
+@charset "UTF-8";
+/* Definimos las Custom properties */
+:root {
+  /* Colores */
+  --negro: #393939;
+  /* Tipografía */
+  --tipo-principal: Roboto, Helvetica, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* (Opcional) Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+  }
+}
+/* (Opcional) Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+/* (Opcional) Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+*::before,
+*::after {
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* (Opcional) */
+  object-fit: cover;
+  /* (Opcional) */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* (Opcional) */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  /* (Opcional) */
+  hyphens: auto;
+  /* (Opcional) */
+  font-smooth: always;
+  /* (Opcional) */
+  -webkit-font-smoothing: antialiased;
+  /* (Opcional) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* For webkit-based browsers (Chrome, Safari, Edge) */
+/* Customize the scrollbar track (the background behind the thumb) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Customize the scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+/* On hover, change the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+body {
+  background-color: #000000;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.nav {
+  align-items: center;
+  background-color: #000000;
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+}
+.nav h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.main-container {
+  margin: 0 !important;
+  width: 100%;
+  background: #000000;
+}
+.main-container__header {
+  align-items: center;
+  background-image: url(../img/bg-header.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: calc(100vh - 6rem);
+  justify-content: center;
+}
+.main-container__header h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  opacity: 0.5;
+}
+@media screen and (min-width: 700px) {
+  .main-container__header h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    opacity: 0.3;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .main-container__header h2 {
+    font-size: 6rem;
+    font-weight: 700;
+    opacity: 0.3;
+  }
+}
+.main-container__article {
+  display: flex;
+  flex-direction: column;
+}
+.main-container__section--first {
+  background-color: #000000;
+  padding: 2rem 4rem;
+}
+.main-container__h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.main-container__information {
+  display: flex;
+  gap: 3rem;
+}
+.main-container__description {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 2rem;
+  width: 50%;
+}
+.main-container__img {
+  height: auto;
+  width: 50%;
+}
+@media screen and (max-width: 960px) {
+  .main-container__section--first {
+    padding: 2rem;
+  }
+  .main-container__h2 {
+    font-size: 1.5rem;
+  }
+  .main-container__information {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .main-container__description {
+    width: 100%;
+  }
+  .main-container__img {
+    width: 100%;
+  }
+}
+.main-container__section--second {
+  background-color: #1e1a13;
+  color: #ffffff;
+  padding: 3rem 0;
+  text-align: center;
+}
+.main-container__icon {
+  color: #ffffff;
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+}
+.main-container__icon span {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.main-container__icon span h3 {
+  font-size: 1.8rem;
+}
+.main-container__icon span i {
+  cursor: pointer;
+  font-size: 4rem;
+  transition: transform 0.3s ease;
+}
+.main-container__icon span i:hover {
+  transform: scale(1.2);
+}
+@media screen and (max-width: 960px) {
+  .main-container__icon {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .main-container__icon span {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .main-container__icon span h3 {
+    font-size: 1rem;
+  }
+  .main-container__icon span i {
+    font-size: 3rem;
+  }
+}
+.main-container__section--third {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem 0;
+}
+.main-container__section--third img {
+  width: 20%;
+}
+@media screen and (max-width: 960px) {
+  .main-container__section--third {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .main-container__section--third img {
+    width: 100%;
+  }
+}
+
+.footer {
+  align-items: center;
+  background-color: #1e1a13;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.footer img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 4rem;
+}
+.footer img:hover {
+  transform: scale(1.2);
+}
+.footer a {
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
