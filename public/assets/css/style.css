@@ -202,8 +202,27 @@ body {
   color: #ffffff;
   font-size: 3rem;
   font-weight: 700;
+  margin: 0;
 }
 
+@keyframes moveUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+}
 .main-container {
   margin: 0 !important;
   width: 100%;
@@ -220,8 +239,10 @@ body {
   justify-content: center;
 }
 .main-container__header h2 {
+  animation: moveUpDown 4s infinite, fadeIn 4s ease-in-out infinite;
   font-size: 1.8rem;
   font-weight: 700;
+  margin: 0;
   opacity: 0.5;
 }
 @media screen and (min-width: 700px) {

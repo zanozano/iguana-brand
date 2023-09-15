@@ -18,10 +18,36 @@ body {
     display: flex;
     height: 6rem;
     justify-content: center;
+
     & h1 {
         color: $primary-font;
         font-size: 3rem;
         font-weight: 700;
+        margin: 0;
+    }
+}
+
+@keyframes moveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: translateY(0);
     }
 }
 
@@ -29,6 +55,7 @@ body {
     margin: 0 !important;
     width: 100%;
     background: $primary-background;
+
     &__header {
         align-items: center;
         background-image: url(../img/bg-header.jpg);
@@ -38,11 +65,17 @@ body {
         display: flex;
         height: calc(100vh - 6rem);
         justify-content: center;
+
         & h2 {
+            animation:
+                moveUpDown 4s infinite,
+                fadeIn 4s ease-in-out infinite;
             font-size: 1.8rem;
             font-weight: 700;
+            margin: 0;
             opacity: 0.5;
         }
+
         @media screen and (min-width: 700px) {
             & h2 {
                 font-size: 4rem;
@@ -50,6 +83,7 @@ body {
                 opacity: 0.3;
             }
         }
+
         @media screen and (min-width: 1000px) {
             & h2 {
                 font-size: 6rem;
@@ -58,24 +92,29 @@ body {
             }
         }
     }
+
     &__article {
         display: flex;
         flex-direction: column;
     }
+
     &__section--first {
         background-color: $primary-background;
         padding: 2rem 4rem;
     }
+
     &__h2 {
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 2rem;
         text-align: center;
     }
+
     &__information {
         display: flex;
         gap: 3rem;
     }
+
     &__description {
         color: $primary-font;
         font-size: 1.2rem;
@@ -83,56 +122,69 @@ body {
         line-height: 2rem;
         width: 50%;
     }
+
     &__img {
         height: auto;
         width: 50%;
     }
+
     @media screen and (max-width: 960px) {
         &__section--first {
             padding: 2rem;
         }
+
         &__h2 {
             font-size: 1.5rem;
         }
+
         &__information {
             flex-direction: column;
             gap: 3rem;
         }
+
         &__description {
             width: 100%;
         }
+
         &__img {
             width: 100%;
         }
     }
+
     &__section--second {
         background-color: $secondary-background;
         color: $primary-font;
         padding: 3rem 0;
         text-align: center;
     }
+
     &__icon {
         color: $primary-font;
         display: flex;
         gap: 8rem;
         justify-content: center;
+
         & span {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+
             & h3 {
                 font-size: 1.8rem;
             }
+
             & i {
                 cursor: pointer;
                 font-size: 4rem;
                 transition: transform 0.3s ease;
+
                 &:hover {
                     transform: scale(1.2);
                 }
             }
         }
     }
+
     @media screen and (max-width: 960px) {
         &__icon {
             color: $primary-font;
@@ -140,33 +192,40 @@ body {
             flex-direction: column;
             gap: 3rem;
             justify-content: center;
+
             & span {
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+
                 & h3 {
                     font-size: 1rem;
                 }
+
                 & i {
                     font-size: 3rem;
                 }
             }
         }
     }
+
     &__section--third {
         background-color: $primary-background;
         display: flex;
         justify-content: space-evenly;
         padding: 4rem 0;
+
         & img {
             width: 20%;
         }
     }
+
     @media screen and (max-width: 960px) {
         &__section--third {
             display: flex;
             flex-direction: column;
             padding: 0;
+
             & img {
                 width: 100%;
             }
@@ -183,14 +242,17 @@ body {
     gap: 2rem;
     justify-content: center;
     padding: 2rem 0;
+
     & img {
         cursor: pointer;
         transition: transform 0.3s ease;
         width: 4rem;
+
         &:hover {
             transform: scale(1.2);
         }
     }
+
     & a {
         font-size: 1rem;
     }
